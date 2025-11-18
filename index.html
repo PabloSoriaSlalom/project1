@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <img src="kitten.png" alt="Profile Photo" class="profile-pic">
+        <h1>HELLO WORLD</h1>
+        <button class="contact-btn">Contact Me</button>
+    </div>
+        <script>
+            // Smooth parallax effect for profile image, text, and button
+            const profilePic = document.querySelector('.profile-pic');
+            const helloText = document.querySelector('h1');
+            const contactBtn = document.querySelector('.contact-btn');
+            let targetX = 0;
+                let currentX = 0;
+                document.addEventListener('mousemove', (e) => {
+                    targetX = (e.clientX / window.innerWidth - 0.5);
+                });
+                function animateParallax() {
+                    // Smoothly interpolate currentX towards targetX
+                    currentX += (targetX - currentX) * 0.12;
+                    profilePic.style.transform = `translateX(${-currentX * 120}px)`;
+                        helloText.style.transform = `translateX(${-currentX * 80}px)`;
+                    contactBtn.style.transform = `translateX(${-currentX * 80}px)`;
+                    // Parallax for background
+                    document.body.style.backgroundPosition = `${currentX * 32}px 0, ${currentX * 16}px 0`;
+                    requestAnimationFrame(animateParallax);
+                }
+                animateParallax();
+        </script>
+    </body>
+</html>
