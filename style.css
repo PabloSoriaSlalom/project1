@@ -57,7 +57,7 @@ h1 {
     box-shadow: 0 4px 24px 0 rgba(0,0,0,0.12);
     border: 1.5px solid rgba(255,255,255,0.35);
     backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(6px);
     color: #fff;
     font-weight: 600;
 }
