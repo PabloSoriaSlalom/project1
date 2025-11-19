@@ -25,8 +25,8 @@
                 function animateParallax() {
                     // Smoothly interpolate currentX towards targetX
                     currentX += (targetX - currentX) * 0.12;
-                    profilePic.style.transform = `translateX(${-currentX * 120}px)`;
-                        helloText.style.transform = `translateX(${-currentX * 80}px)`;
+                    profilePic.style.transform = `translateX(${-currentX * 160}px)`;
+                        helloText.style.transform = `translateX(${-currentX * 120}px)`;
                     contactBtn.style.transform = `translateX(${-currentX * 80}px)`;
                     // Parallax for background
                     document.body.style.backgroundPosition = `${currentX * 32}px 0, ${currentX * 16}px 0`;
