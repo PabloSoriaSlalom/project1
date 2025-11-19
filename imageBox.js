@@ -43,12 +43,20 @@ document.addEventListener('DOMContentLoaded', function() {
     grid.className = 'thumb-grid';
     box.appendChild(grid);
 
+    const profilePicEl2 = document.querySelector('.profile-pic');
     thumbnails.forEach((src, i) => {
       const thumb = document.createElement('img');
       thumb.src = src;
       thumb.className = 'thumbnail';
+      // Highlight selected thumbnail
+      if (profilePicEl2 && profilePicEl2.src.includes(src)) {
+        thumb.classList.add('selected-thumb');
+      }
       thumb.onclick = () => {
         document.querySelector('.profile-pic').src = src;
+        // Remove highlight from all thumbnails
+        grid.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('selected-thumb'));
+        thumb.classList.add('selected-thumb');
       };
       grid.appendChild(thumb);
     });
